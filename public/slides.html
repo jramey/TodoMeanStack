@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>MEAN</title>
+		<meta name="description" content="MEAN STACK COP">
+		<meta name="author" content="Jordan Ramey">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="css/style.css" rel="stylesheet">
+
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>MEAN STACK COP</h1>
+					<h3>Full-stack JavaScript solution</h3>
+					<p>
+						<small>Created by <a href="http://jramey.github.io">Jordan Ramey</a> / <a href="http://twitter.com/jordanramey03">@JordanRamey03</a></small>
+					</p>
+					<img src="images/slides/mean.png">
+				</section>
+
+				<section>
+					<h2>MEAN Overview</h2>
+				</section>
+
+				<section>
+					<h2>Why do you have to be so MEAN?</h2>
+					<p>What is MEAN and how it's used</p>
+					<img src="images/slides/mean1.png">
+				</section>
+
+				<section>
+					<h2>Shellraiser</h2>
+					<p>MongoDB Shell</p>
+					<p>Simple find,   insert,   and update queries in the Shell</p>
+					<img src="images/slides/Mean2.jpg">
+				</section>
+
+				<section>
+					<h2>MEAN GEAN</h2>
+					<p>Building a MEAN stack app</p>
+					<img src="images/slides/MEAN3.jpg">
+					<p>Yes... That is E</p>
+				</section>
+
+				<section>
+					<h2>MEAN STACK</h2>
+					<p>MEAN is an opinionated full-stack JavaScript framework - which simplifies and accelerates web application development.</p>
+
+					<pre><code data-trim contenteditable>
+$ sudo npm install -g mean-cli 
+$ mean init yourNewApp
+					</code></pre>
+				</section>
+
+				<section>
+					<img class="meanImage" src="images/slides/MongoDB.png" height="108" width="383"><br>
+					<img class="meanImage" src="images/slides/express.png" height="108" width="383"><br>
+					<img class="meanImage" src="images/slides/angularjs.png" height="108" width="383" alt=""><br>
+					<img class="meanImage" src="images/slides/nodejs.png" height="108" width="383">
+				</section>
+
+				<section>
+					<h2>With their powers combined!</h2>
+					<img class="meanImage" src="images/slides/cp.jpg" height="380" width="380">
+				</section>
+
+				<section>
+					<h2>Why MEAN?</h2>
+					<ul>
+						<li class="fragment"><strong>One Language (JavaScript)</strong></li>
+						<li class="fragment"><strong>Consistent models across the stack</strong></li>
+						<li class="fragment"><strong>Consistent practices across the stack</strong></li>
+						<li class="fragment"><strong>Lightweight</strong></li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>MongoDB</h2>
+						<ul>
+							<li class="fragment"><strong><p>A simple and scalable NoSQL document database</p></strong></li>
+							<li class="fragment"><strong>JSON based models (BSON)</strong></li>
+							<li class="fragment"><strong>Flexible schema and query selectors</strong></li>
+							<li class="fragment"><strong>NOT ORACLE!!</strong></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Express</h2>
+						<ul>
+							<li class="fragment"><strong><p>A simple Web framework for Node.js</p></strong></li>
+							<li class="fragment"><strong>Used for easy routing and serving of files.</strong></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Running Express</h2>
+						 <pre>
+                            <code contenteditable>
+var express  = require('express');
+var app      = express(); 
+var port     = process.env.PORT || 8080; 
+
+var directory = __dirname + '/public';
+app.use(express.static(directory)); 
+
+app.get('/slides', function (req, res) {
+		res.sendfile(directory + '/slides.html');
+})
+
+app.listen(port);
+                            </code>
+                        </pre>
+					</section>
+
+					<section>
+						<h2> AngularJS</h2>
+						<p>Assists with creating single-page applications, which consist of one HTML page with CSS and JavaScript on the client side.</p>
+					</section>
+
+					<section>
+						<h2>Node.js</h2>
+						<p>Platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.</p>
+					</section>
+
+						<section>
+						<h2>Running Node</h2>
+						 <pre>
+                            <code contenteditable>
+var net = require('net');
+
+var server = net.createServer(function (socket) {
+  socket.write('Echo server\r\n');
+  socket.pipe(socket);
+});
+
+server.listen(1337, '127.0.0.1');
+                            </code>
+                        </pre>
+					</section>
+
+					<section>
+						<h2>Nodemon</h2>
+						<ol>
+							<ol class="fragment"><strong><p>Reloads the web server when changes are made</p></strong></ol>
+						</ol>
+					</section>
+
+					<section>
+						<h2>Mongoose</h2>
+						<ol>
+							<ol class="fragment"><strong><p>Casts and validates MongoDB models</p></strong></ol>
+						</ol>
+					</section>
+
+						<section>
+						<h2>Using Mongoose</h2>
+						 <pre>
+                            <code contenteditable>
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+
+var Cat = mongoose.model('Cat', { name: String });
+
+var kitty = new Cat({ name: 'Zildjian' });
+kitty.save(function (err) {
+  if (err) // ...
+  console.log('meow');
+});
+                            </code>
+                        </pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>BSON [bee · sahn]</h2>
+					<p>
+						 Short for Bin­ary JSON, is a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments. Like JSON, BSON sup­ports the em­bed­ding of doc­u­ments and ar­rays with­in oth­er doc­u­ments and ar­rays. BSON also con­tains ex­ten­sions that al­low rep­res­ent­a­tion of data types that are not part of the JSON spec. For ex­ample, BSON has a Date type and a BinData type.
+					</p>
+					<img src="images/slides/document.png" height="260" width="520" alt="">
+				</section>
+
+				<section>
+					<h2>Lets code!</h2>
+					<img src ="images/slides/mean4.jpg">
+				</section>
+
+				<section>
+					<h2>MongoDB Shell</h2>
+				</section>
+
+				<section>
+					<h2>MEAN Stack</h2>
+				</section>
+
+				<section>
+					<h2>Config</h2>
+					<pre><code data-trim contenteditable>
+url : 'mongodb://localhost/testdb'
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Angular Controller</h2>
+					<pre><code data-trim contenteditable>
+$scope.getAllTodos = function() {
+    Todos.get()
+    .then(function success(data) {
+         $scope.todos = data;
+    });
+};
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Angular Service</h2>
+					<pre><code data-trim contenteditable>
+return {
+     get : function() {
+         var deferred = $q.defer();
+         $http.get('/api/todos').success(function(data) {
+	          deferred.resolve(data);
+         });
+
+         return deferred.promise;
+     }
+}		
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Mongoose</h2>
+					<pre><code data-trim contenteditable>
+var mongoose = require('mongoose');
+var schema = new mongoose.Schema( { text: 'string' } );
+
+module.exports = mongoose.model('Todos', schema);	
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>API Call</h2>
+					<pre><code data-trim contenteditable>
+app.get('/api/todos', function(req, res) {
+	TodoCollection.find(function(err, todos) {
+		if (err)
+			res.send(err)
+
+		res.json(todos); 
+	});
+});		
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+					<h3>BY Jordan Ramey</h3>
+					<img src="images/slides/meansmall.png">
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="lib/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				//parallaxBackgroundImage: '../../../jordanramey/Pictures/Photo Booth Library/Pictures/Photo on 6-21-14 at 9.48 PM #2.jpg',
+				 //parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
