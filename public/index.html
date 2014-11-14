@@ -12,21 +12,30 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
 
-  <body ng-controller="mainController">
+  <body ng-controller="mainController" class="ng-cloak">
+    <input type="text" class="form-control input-sm text-center" placeholder="Search" ng-change="search()" ng-model="searchString" select-on-click />
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
 
           <div class="inner cover">
             <h1 class="cover-heading">Mean Todo List</h1>
-            <p class="lead">{{ todos.length }} item(s) need your attention</p>
+            <p class="lead">
+              {{ (todos | filter: { done:"false" } ).length }} item(s) need your attention
+            </p>
 
             <div id="todo-list" class="row">
               <div class="col-sm-4 col-sm-offset-4">
                 <div class="checkbox" ng-repeat="todo in todos">
-                  <label>
-                    <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+                  <input type="checkbox" ng-if="!todo.editing" ng-change='updateTodo(todo)' ng-model="todo.done"> 
+                  <label ng-if="!todo.editing" ng-click="toggleEdit(todo)" ng-class="{'todo-done': todo.done}">
+                    {{ todo.text }}
                   </label>
+                    <form ng-if="todo.editing">
+                      <input type="text" value= {{todo.text}} ng-model="todo.text" ng-model="todo.done" select-on-click />
+                      <button type="submit" class="btn btn-lg btn-default hidden" ng-click="updateTodo(todo)"></button>
+                      <img src="images/delete.png" ng-click="deleteTodo(todo)" />
+                     </form>
                 </div>
               </div>
             </div>
@@ -37,9 +46,10 @@
                 <div class="form-group">
                   <input type="text" class="form-control input-lg text-center" placeholder="LEARN MEAN STACK!" ng-model="newTodo.text">
                 </div>
-                <button type="submit" id="add" class="btn btn-lg btn-default" ng-click="createTodo()">Add</button>
+                <button type="submit" class="btn btn-lg btn-default hidden" ng-click="createTodo()">Add</button>
               </form>
             </div>
+            <button type="button" class="btn btn-md btn-default" ng-click="clearCompleted()">Clear Complered Tasks</button>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ load("pathTo/devSetup.js")
 * Find all devs order by name (ascending and descending)
 * Insert array of devs
 * Update Dev's Name
-* Run an upsert statement (insert and update a record with this statement)
+* Run an upsert statemnet (insert and update a record with this statement)
 * Remove Dev from list
 
  Mean Stack
@@ -36,7 +36,7 @@ grunt unit // Run unit tests.
  Optional 
 -------------------------
 * Write unit and e2e test for all cases.  
-* Clicking on a task marks it as complete in the database and also strikes through the text
+* Clciking on a task marks it as complete in the database and also strikes through the text
 * Add a remove link to the task
 * Add a loading symbol when the tasks are being loaded from the "server"
 * Checking the box marks the tasks as completed, click the title allows you to update the title
