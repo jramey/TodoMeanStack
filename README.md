@@ -22,7 +22,7 @@ load("pathTo/devSetup.js")
 -------------------------
 ```
 Clone git@github.com:jramey/TodoMeanStack.git
-npm-install
+npm install
 grunt // Run MEAN app
 grunt e2e // Run end 2 end tests. Must have app running
 grunt unit // Run unit tests. 
